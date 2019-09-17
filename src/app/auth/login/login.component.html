@@ -1,15 +1,46 @@
 <p class="text-xs-center">Login to start</p>
-<form>
-  <div class="form-group">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group" [ngClass]="{ 'has-error': form.get('email').invalid && form.get('email').touched }">
     <label for="email">Email</label>
-    <input type="text" class="form-control underlined" id="email" placeholder="Email" />
+    <input type="text" class="form-control underlined" id="email" placeholder="Email" formControlName="email" />
+    <span
+      *ngIf="form.get('email')['errors'] && form.get('email')['errors']['required'] && form.get('email').touched"
+      class="form-help-text"
+      >Empty email.</span
+    >
+    <span
+      *ngIf="form.get('email')['errors'] && form.get('email')['errors']['email'] && form.get('email').touched"
+      class="form-help-text"
+      >Wrong email.</span
+    >
   </div>
-  <div class="form-group">
+  <div class="form-group" [ngClass]="{ 'has-error': form.get('password').invalid && form.get('password').touched }">
     <label for="password">Password</label>
-    <input type="password" class="form-control underlined" id="password" placeholder="Password" />
+    <input
+      type="password"
+      class="form-control underlined"
+      id="password"
+      placeholder="Password"
+      formControlName="password"
+    />
+    <span
+      *ngIf="
+        form.get('password')['errors'] && form.get('password')['errors']['required'] && form.get('password').touched
+      "
+      class="form-help-text"
+      >Empty password.</span
+    >
+    <span
+      *ngIf="
+        form.get('password')['errors'] && form.get('password')['errors']['minlength'] && form.get('password').touched
+      "
+      class="form-help-text"
+      >Password length should be more than {{ form.get('password')['errors']['minlength']['requiredLength'] }}, you
+      filled {{ form.get('password')['errors']['minlength']['actualLength'] }}</span
+    >
   </div>
   <div class="form-group">
-    <button type="submit" class="btn btn-block btn-primary">Login</button>
+    <button type="submit" class="btn btn-block btn-primary" [disabled]="form.invalid">Login</button>
   </div>
   <div class="form-group">
     <p class="text-muted text-xs-center">Not a member? <a href="#">Register!</a></p>
