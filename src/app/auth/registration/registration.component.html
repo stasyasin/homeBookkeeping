@@ -1,27 +1,69 @@
 <p class="text-xs-center">Registration</p>
-<form>
-  <div class="form-group">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group" [ngClass]="{ 'has-error': form.get('email').invalid && form.get('email').touched }">
     <label for="email">Email</label>
-    <input type="text" class="form-control underlined" id="email" placeholder="Email" />
+    <input type="text" class="form-control underlined" id="email" placeholder="Email" formControlName="email" />
+    <span
+      *ngIf="form.get('email')['errors'] && form.get('email')['errors']['required'] && form.get('email').touched"
+      class="form-help-text"
+      >Empty email.</span
+    >
+    <span
+      *ngIf="form.get('email')['errors'] && form.get('email')['errors']['email'] && form.get('email').touched"
+      class="form-help-text"
+      >Wrong email.</span
+    >
   </div>
-  <div class="form-group has-error">
+  <div class="form-group" [ngClass]="{ 'has-error': form.get('password').invalid && form.get('password').touched }">
     <label for="password">Password</label>
-    <input type="password" class="form-control underlined" id="password" placeholder="Password" />
-    <span class="form-help-text">Error message.</span>
+    <input
+      type="password"
+      class="form-control underlined"
+      id="password"
+      placeholder="Password"
+      formControlName="password"
+    />
+    <span
+      *ngIf="
+        form.get('password')['errors'] && form.get('password')['errors']['required'] && form.get('password').touched
+      "
+      class="form-help-text"
+      >Empty password.</span
+    >
+    <span
+      *ngIf="
+        form.get('password')['errors'] &&
+        form.get('password')['errors']['minlength'] &&
+        form.get('password').touched &&
+        form.get('password')['errors']['minlength']['requiredLength']
+      "
+      class="form-help-text"
+      >Password length should be more than {{ form.get('password')['errors']['minlength']['requiredLength'] }}, you
+      filled {{ form.get('password')['errors']['minlength']['actualLength'] }}</span
+    >
   </div>
-  <div class="form-group has-success">
+  <div class="form-group" [ngClass]="{ 'has-error': form.get('name').invalid && form.get('name').touched }">
     <label for="name">Name</label>
-    <input type="text" class="form-control underlined" id="name" placeholder="Name" />
-    <span class="form-help-text">Success message.</span>
+    <input type="text" class="form-control underlined" id="name" placeholder="Name" formControlName="name" />
+    <span
+      *ngIf="form.get('name')['errors'] && form.get('name')['errors']['required'] && form.get('name').touched"
+      class="form-help-text"
+    >Empty name.</span
+    >
   </div>
-  <div class="form-group">
+  <div class="form-group" [ngClass]="{ 'has-error': form.get('agree').invalid}">
     <label for="agree">
-      <input class="checkbox" id="agree" type="checkbox" />
-      <span>Agree with the rules</span>
+      <input class="checkbox" id="agree" type="checkbox" formControlName="agree" />
+      <span>Agree with terms and conditions.</span>
     </label>
+    <div
+      *ngIf="form.get('agree')['errors'] && form.get('agree')['errors']['required']"
+      class="form-help-text"
+    >Agree with terms and conditions.</div
+    >
   </div>
   <div class="form-group">
-    <button type="submit" class="btn btn-block btn-primary">Register</button>
+    <button type="submit" class="btn btn-block btn-primary" [disabled]="form.invalid">Register</button>
   </div>
   <div class="form-group">
     <p class="text-muted text-xs-center">
