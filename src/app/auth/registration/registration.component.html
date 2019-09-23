@@ -13,6 +13,11 @@
       class="form-help-text"
       >Wrong email.</span
     >
+    <span
+      *ngIf="form.get('email')['errors'] && form.get('email')['errors']['forbiddenEmail'] && form.get('email').touched"
+      class="form-help-text"
+    >Email is already in use.</span
+    >
   </div>
   <div class="form-group" [ngClass]="{ 'has-error': form.get('password').invalid && form.get('password').touched }">
     <label for="password">Password</label>
