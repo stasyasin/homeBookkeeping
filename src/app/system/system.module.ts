@@ -8,10 +8,11 @@ import { PlanningPageComponent } from './planning-page/planning-page.component';
 import { RecordsPageComponent } from './records-page/records-page.component';
 import {SystemComponent} from './system.component';
 import {AuthRoutingModule} from '../auth/auth-routing.module';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 
 @NgModule({
   imports: [CommonModule, SharedModule, AuthRoutingModule, SystemRoutingModule],
-  declarations: [SystemComponent, BillPageComponent, HistoryPageComponent, PlanningPageComponent, RecordsPageComponent]
+  declarations: [SystemComponent, BillPageComponent, HistoryPageComponent, PlanningPageComponent, RecordsPageComponent, SidebarComponent]
 })
 export class SystemModule {
 
