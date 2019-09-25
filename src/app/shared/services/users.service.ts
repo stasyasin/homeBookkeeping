@@ -10,15 +10,11 @@ export class UsersService {
 
   getUserByEmail(email: string): Observable<User> {
     return this.http.get(`http://localhost:3000/users?email=${email}`).pipe(
-      // map((response: Response) => response.json()),
       map((user: User[]) => user[0] ? user[0] : undefined)
     );
   }
 
   createNewUser(user: User): Observable<any> {// todo fix here and put User
     return this.http.post(`http://localhost:3000/users`, user);
-    // // .pipe(
-    //   map((response: Response) => new User(response))
-    // );
   }
 }
