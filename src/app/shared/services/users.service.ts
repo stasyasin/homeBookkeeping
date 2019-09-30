@@ -6,7 +6,7 @@ import {map} from 'rxjs/operators';
 import {BaseApi} from '../core/base-api';
 
 @Injectable()
-export class UsersService extends BaseApi{
+export class UsersService extends BaseApi {
   constructor(public http: HttpClient) {
     super(http);
   }

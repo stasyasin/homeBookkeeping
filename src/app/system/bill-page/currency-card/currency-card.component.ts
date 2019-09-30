@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Bill} from '../../shared/models/bill.model';
 
 @Component({
   selector: 'hb-currency-card',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./currency-card.component.scss']
 })
 export class CurrencyCardComponent implements OnInit {
+  @Input() bill: Bill;
+  @Input() currency: any;
+  currencies: string[] = ['UAH', 'USD'];
 
   constructor() { }
 

@@ -7,28 +7,23 @@
       <div class="row row-sm stats-container">
         <table class="table table-hover">
           <thead>
-          <tr>
-            <th>Currency</th>
-            <th>Exchange Rate</th>
-            <th>Date</th>
-          </tr>
+            <tr>
+              <th>Currency</th>
+              <th>Exchange Rate</th>
+              <th>Date</th>
+            </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>US Dollar</td>
-            <td>24.33</td>
-            <td>23.09.2019</td>
-          </tr>
-          <tr>
-            <td>Euro</td>
-            <td>26.72</td>
-            <td>23.09.2019</td>
-          </tr>
-          <tr>
-            <td>Hryvnia</td>
-            <td>1</td>
-            <td>23.09.2019</td>
-          </tr>
+            <tr>
+              <td>EUR</td>
+              <td>1</td>
+              <td>{{ currency.date }}</td>
+            </tr>
+            <tr *ngFor="let c of currencies">
+              <td>{{ c }}</td>
+              <td>{{ currency.rates[c] }}</td>
+              <td>{{ currency.date }}</td>
+            </tr>
           </tbody>
         </table>
       </div>
