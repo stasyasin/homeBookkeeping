@@ -3,21 +3,22 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Bill } from '../models/bill.model';
 import { map } from 'rxjs/operators';
+import {BaseApi} from '../../../shared/core/base-api';
 
 @Injectable()
-export class BillService {
+export class BillService extends BaseApi {
   accessKey = 'e3bbdbb89ff2e65d7626e65a57333ee2';
-  constructor(private http: HttpClient) {}
+  constructor(public http: HttpClient) {
+    super(http);
+  }
 
   getBill(): Observable<Bill> {
-    return this.http.get(`http://localhost:3000/bill`).pipe(
+    return this.get(`bill`).pipe(
       map((bill: Bill) => bill)
     );
   }
 
   getCurrency(base: string = 'UAH'): Observable<any> {
-    // const temp = this.http.get(`http://data.fixer.io/api/latest?access_key=${this.accessKey}`);
-    // console.log(temp);
     return this.http.get(`http://data.fixer.io/api/latest?access_key=${this.accessKey}`);
   }
 }
