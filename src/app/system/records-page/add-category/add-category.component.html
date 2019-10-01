@@ -12,7 +12,7 @@
         <span *ngIf="name.invalid && name.touched" class="form-help-text">Empty Category Name</span>
       </div>
       <div class="form-group" [ngClass]="{ 'has-error': capacity.invalid && capacity.touched }">
-        <label class="control-label" for="category-value">Empty category limit</label>
+        <label class="control-label" for="category-value">Enter category limit</label>
         <input
           type="number"
           id="category-value"
@@ -24,9 +24,9 @@
           #capacity="ngModel"
           [ngModel]="1"
         />
-        <span *ngIf="capacity.invalid && capacity.touched" class="form-help-text">Success</span>
+        <span *ngIf="capacity.invalid && capacity.touched" class="form-help-text">Empty category limit</span>
       </div>
-      <button type="submit" class="btn btn-primary">Add</button>
+      <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Add</button>
     </form>
   </div>
 </div>

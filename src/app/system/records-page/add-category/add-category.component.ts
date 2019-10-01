@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CategoriesService } from '../../shared/services/categories.service';
 import { Category } from '../../shared/models/category.model';
@@ -18,7 +18,7 @@ export class AddCategoryComponent {
     const category = new Category(name, capacity);
     this.categoriesService.addCategory(category).subscribe((cat: Category) => {
       form.reset();
-      form.form.patchValue({capacity: 1});
+      form.form.patchValue({ capacity: 1 });
       this.onCategoryAdd.emit(category);
     });
   }
