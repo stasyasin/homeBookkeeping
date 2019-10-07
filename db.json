@@ -8,7 +8,7 @@
     }
   ],
   "bill": {
-    "value": 100000,
+    "value": 80000,
     "currency": "EUR"
   },
   "categories": [
@@ -68,6 +68,22 @@
       "date": "10.06.2017 14:01:58",
       "id": 5,
       "description": "Buying petrol"
+    },
+    {
+      "type": "outcome",
+      "amount": 10000,
+      "category": 1,
+      "date": "07.10.2019 11:05:36",
+      "description": "renovation",
+      "id": 6
+    },
+    {
+      "type": "outcome",
+      "amount": 10000,
+      "category": 3,
+      "date": "07.10.2019 11:05:55",
+      "description": "new car",
+      "id": 7
     }
   ]
 }
