@@ -1,6 +1,10 @@
 <div class="title-block">
   <h3 class="title">History page <span class="sparkline bar"></span></h3>
 </div>
-<hb-history-chart></hb-history-chart>
-<hb-history-events></hb-history-events>
-<hb-history-filter></hb-history-filter>
+<div *ngIf="!isLoaded" class="text-center">Loading...</div>
+<div *ngIf="isLoaded">
+  <hb-history-chart [data]="chartData"></hb-history-chart>
+  <hb-history-events></hb-history-events>
+  <hb-history-filter></hb-history-filter>
+</div>
+
