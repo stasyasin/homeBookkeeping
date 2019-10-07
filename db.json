@@ -8,7 +8,7 @@
     }
   ],
   "bill": {
-    "value": 80000,
+    "value": 75000,
     "currency": "EUR"
   },
   "categories": [
@@ -26,6 +26,11 @@
       "id": 3,
       "name": "Car",
       "capacity": 7000
+    },
+    {
+      "name": "Travels",
+      "capacity": 20000,
+      "id": 4
     }
   ],
   "events": [
@@ -84,6 +89,14 @@
       "date": "07.10.2019 11:05:55",
       "description": "new car",
       "id": 7
+    },
+    {
+      "type": "outcome",
+      "amount": 5000,
+      "category": 4,
+      "date": "07.10.2019 11:08:04",
+      "description": "Trip to Paris",
+      "id": 8
     }
   ]
 }
