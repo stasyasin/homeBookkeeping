@@ -8,7 +8,7 @@
     }
   ],
   "bill": {
-    "value": 75000,
+    "value": 74985,
     "currency": "EUR"
   },
   "categories": [
@@ -39,7 +39,7 @@
       "type": "income",
       "amount": 1250,
       "category": 2,
-      "date": "12.06.2017 19:49:02",
+      "date": "01.10.2019 19:49:02",
       "description": "Receive a food as a gift"
     },
     {
@@ -47,14 +47,14 @@
       "type": "outcome",
       "amount": 1300,
       "category": 1,
-      "date": "13.06.2017 19:49:02",
+      "date": "08.10.2019 19:49:02",
       "description": "Bought dishwasher"
     },
     {
       "type": "income",
       "amount": 1480,
       "category": 2,
-      "date": "17.06.2017 14:00:48",
+      "date": "03.10.2019 14:00:48",
       "id": 3,
       "description": "Visit restaurant with vouchers. Free food!!!"
     },
@@ -62,7 +62,7 @@
       "type": "outcome",
       "amount": 2470,
       "category": 2,
-      "date": "17.06.2017 14:00:58",
+      "date": "08.10.2019 14:00:58",
       "id": 4,
       "description": "Buying goods for a week"
     },
@@ -70,7 +70,7 @@
       "type": "outcome",
       "amount": 4000,
       "category": 3,
-      "date": "10.06.2017 14:01:58",
+      "date": "07.10.2019 14:01:58",
       "id": 5,
       "description": "Buying petrol"
     },
@@ -78,7 +78,7 @@
       "type": "outcome",
       "amount": 10000,
       "category": 1,
-      "date": "07.10.2019 11:05:36",
+      "date": "09.10.2019 11:05:36",
       "description": "renovation",
       "id": 6
     },
@@ -86,7 +86,7 @@
       "type": "outcome",
       "amount": 10000,
       "category": 3,
-      "date": "07.10.2019 11:05:55",
+      "date": "09.10.2019 11:05:55",
       "description": "new car",
       "id": 7
     },
@@ -94,9 +94,17 @@
       "type": "outcome",
       "amount": 5000,
       "category": 4,
-      "date": "07.10.2019 11:08:04",
+      "date": "09.10.2019 11:08:04",
       "description": "Trip to Paris",
       "id": 8
+    },
+    {
+      "type": "outcome",
+      "amount": 15,
+      "category": 2,
+      "date": "09.10.2019 13:54:16",
+      "description": "Burger",
+      "id": 9
     }
   ]
 }
