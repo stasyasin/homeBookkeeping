@@ -16,6 +16,7 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
   events: HBEvent[] = [];
   sub1: Subscription;
   chartData = [];
+  isFilterVisible = false;
 
   constructor(private categoriesService: CategoriesService, private eventsService: EventsService) {}
 
@@ -42,6 +43,23 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
         }, 0)
       });
     });
+  }
+
+  private toggleFilterVisiability(dir: boolean) {
+    this.isFilterVisible = dir;
+  }
+
+  openFilter() {
+    this.toggleFilterVisiability(true);
+  }
+
+  onFilterApply(filterData) {
+    console.log(filterData);
+
+  }
+
+  onFilterCancel() {
+    this.toggleFilterVisiability(false);
   }
 
   ngOnDestroy(): void {
