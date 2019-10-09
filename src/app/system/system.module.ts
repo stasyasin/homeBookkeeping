@@ -27,7 +27,7 @@ import { HistoryFilterComponent } from './history-page/history-filter/history-fi
 import { FilterPipe } from './shared/pipes/filter.pipe';
 
 @NgModule({
-  imports: [CommonModule, SharedModule, AuthRoutingModule, SystemRoutingModule],
+  imports: [CommonModule, SharedModule, SystemRoutingModule],
   declarations: [
     SystemComponent,
     BillPageComponent,

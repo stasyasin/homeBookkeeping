@@ -39,7 +39,7 @@ export class RegistrationComponent implements OnInit {
     return new Promise((resolve, reject) => {
       this.usersService.getUserByEmail(control.value).subscribe((user: User) => {
         if (user) {
-          resolve({forbiddenEmail: true}); // todo ecranate password here later
+          resolve({forbiddenEmail: true}); // todo hide password here later
         } else {
           resolve(null);
         }
