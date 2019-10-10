@@ -8,11 +8,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsersService } from './shared/services/users.service';
 import { AuthService } from './shared/services/auth.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AuthGuard} from './shared/services/auth.guard';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, HttpClientModule, AuthModule, AppRoutingModule, BrowserAnimationsModule],
-  providers: [UsersService, AuthService],
+  providers: [UsersService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

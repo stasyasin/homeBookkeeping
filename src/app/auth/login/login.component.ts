@@ -26,7 +26,9 @@ export class LoginComponent implements OnInit {
     this.message = new Message('danger', '');
     this.route.queryParams.subscribe((params: Params) => {
       if (params.nowCanLogin) {
-        this.showMessage({type: 'success', text: 'Now you can login'});
+        this.showMessage({ type: 'success', text: 'Now you can login' });
+      } else if (params.accessDenied) {
+        this.showMessage({ type: 'warning', text: 'Please login to work' });
       }
     });
     this.form = new FormGroup({
@@ -52,10 +54,10 @@ export class LoginComponent implements OnInit {
           this.authService.login();
           this.router.navigate(['/system', 'bill']);
         } else {
-          this.showMessage({type: 'danger', text: 'Password invalid'});
+          this.showMessage({ type: 'danger', text: 'Password invalid' });
         }
       } else {
-        this.showMessage({type: 'danger', text: 'lack of luck, no customer'});
+        this.showMessage({ type: 'danger', text: 'lack of luck, no customer' });
       }
     });
   }
