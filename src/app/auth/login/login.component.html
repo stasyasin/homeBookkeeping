@@ -1,5 +1,5 @@
 <p class="text-xs-center">Login to start</p>
-<div *ngIf="message.text" class="alert alert-{{ message.type }}">{{ message.text }}</div>
+<div @fade *ngIf="message.text" class="alert alert-{{ message.type }}">{{ message.text }}</div>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="form-group" [ngClass]="{ 'has-error': form.get('email').invalid && form.get('email').touched }">
     <label for="email">Email</label>
