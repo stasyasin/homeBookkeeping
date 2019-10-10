@@ -9,7 +9,7 @@
 <section class="section">
   <div class="row">
     <div class="text-center" *ngIf="!isLoaded">
-      Loading...
+      <hb-loader></hb-loader>
     </div>
     <div *ngIf="isLoaded">
       <hb-bill-card [bill]="bill" [currency]="currency"></hb-bill-card>

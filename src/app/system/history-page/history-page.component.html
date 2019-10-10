@@ -6,11 +6,15 @@
     </button>
   </div>
 </div>
-<div *ngIf="!isLoaded" class="text-center">Loading...</div>
+<div *ngIf="!isLoaded" class="text-center"><hb-loader></hb-loader></div>
 <div *ngIf="isLoaded">
   <hb-history-chart [data]="chartData"></hb-history-chart>
   <hb-history-events [categories]="categories" [events]="filteredEvents"></hb-history-events>
   <div *ngIf="isFilterVisible">
-    <hb-history-filter (onFilterApply)="onFilterApply($event)" (onFilterCancel)="onFilterCancel()" [categories]="categories"></hb-history-filter>
+    <hb-history-filter
+      (onFilterApply)="onFilterApply($event)"
+      (onFilterCancel)="onFilterCancel()"
+      [categories]="categories"
+    ></hb-history-filter>
   </div>
 </div>
