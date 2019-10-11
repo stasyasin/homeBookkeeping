@@ -6,6 +6,7 @@ import { Message } from '../../shared/models/message.model';
 import { AuthService } from '../../shared/services/auth.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import {fadeStateTrigger} from '../../shared/animations/fade.animation';
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'hb-login',
@@ -21,8 +22,16 @@ export class LoginComponent implements OnInit {
     private userService: UsersService,
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    private title: Title,
+    private meta: Meta
+  ) {
+    title.setTitle('Login page');
+    meta.addTags([
+      {name: 'keywords', content: 'login, enter, home, bookkeeping'},
+      {name: 'description', content: 'Login page for Home Bookkeeping app'}
+    ]);
+  }
 
   ngOnInit() {
     this.message = new Message('danger', '');
