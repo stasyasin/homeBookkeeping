@@ -4,7 +4,11 @@ import {Observable} from 'rxjs';
 
 @Injectable()
 export class BaseApi {
-  private baseUrl = 'http://localhost:3000/';
+  private baseUrl = 'http://35.232.61.12:3000/';
+  // private baseUrl = 'http://localhost:3000/';
+  // private baseUrl = 'https://my-json-server.typicode.com/stasyasin/homeBookeepingJson/';
+  // private baseUrl = 'https://jsonstorage.net/api/items/33c131ab-a7af-4b2d-93d8-5baf3a155421/';
+  // private baseUrl = 'https://api.jsonbin.io/b/5da2f4ee626bc47f463bbc66';
   constructor(public http: HttpClient) {}
 
   private getUrl(url: string = ''): string {
